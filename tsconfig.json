@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "temp/script",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true
+  },
+  "files": [
+    "src/script/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

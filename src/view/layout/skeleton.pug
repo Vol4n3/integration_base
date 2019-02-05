@@ -1,0 +1,21 @@
+doctype html
+html(lang='fr')
+	head
+		title simple website
+		meta(charset='utf-8')
+		meta(name='description' content=description)
+		meta(name='author' content='Vol4n3')
+		meta(name='category' content=category)
+		meta(name='keywords' content=(keywords) ? keywords.join(','): '')
+		meta(name='viewport' content="width=device-width, initial-scale=1")
+		meta(name="theme-color" content=themeColor)
+		block styles
+			link(href='./style/main.css' rel='stylesheet')
+	body
+		header
+			include header.pug
+		block content
+		footer
+			include footer.pug
+		block scripts
+			script(src='./script/bundle.min.js' type='text/javascript')

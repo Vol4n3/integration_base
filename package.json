@@ -1,0 +1,31 @@
+{
+  "name": "simple-front",
+  "version": "1.0.0",
+  "description": "site web eternal cube",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && yarn browserify && yarn sass && yarn pug",
+    "sass": "sass --no-source-map src/style/index.scss temp/style/main.css && yarn autoprefix",
+    "autoprefix": "npx postcss temp/style/main.css --no-map --use autoprefixer -d dist/style/",
+    "browserify": "browserify temp/script/index.js -o temp/script/bundle.js && yarn babel",
+    "babel": "babel temp/script/bundle.js -d temp/script/babel && yarn uglify",
+    "uglify": "mkdirp ./dist/script/ && uglifyjs temp/script/babel/bundle.js -o dist/script/bundle.min.js --source-map",
+    "pug": "pug -O src/view/view-model.json src/view/template -o dist -P"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "autoprefixer": "^9.4.7",
+    "browserify": "^16.2.3",
+    "mkdirp": "^0.5.1",
+    "postcss-cli": "^6.1.1",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.16.1",
+    "typescript": "^3.3.1",
+    "uglify-js": "^3.4.9"
+  }
+}
